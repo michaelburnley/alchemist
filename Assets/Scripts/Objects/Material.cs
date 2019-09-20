@@ -15,17 +15,17 @@ public class Material : Item
     [SerializeField]
     private int bundle;
 
-    private MaterialType Type {
+    public MaterialType Type {
         get {
             return type;
         }
     }
-    private int Quantity {
+    public int Quantity {
         get {
             return quantity;
         }
     }
-    private int Bundle {
+    public int Bundle {
         get {
             return bundle;
         }

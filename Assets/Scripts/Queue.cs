@@ -2,17 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Queue : MonoBehaviour
+public class Queue
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private List<Turn> turns = new List<Turn>();
+    private Queue nextQueue = new Queue();
+
+    public List<Turn> Turns {
+        get {
+            return turns;
+        }
+
+        set {
+            turns = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void AddTurn(Turn turn) {
+        turns.Add(turn);
+    }
+
+    public Queue Next() {
+        turns[0].ProcessTurn();
+        turns.RemoveAt(0);
+        nextQueue.Turns = turns;
+        return nextQueue;
     }
 }
