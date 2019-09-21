@@ -13,14 +13,14 @@ public class Turn
     }
 
     public List<Action> AddActions(Action action) {
-        if (actions.Length <= action_count) {
+        if (actions.Count <= action_count) {
             actions.Add(action);
         }
         return actions;
     }
 
     public void ProcessTurn() {
-        for (int i = 0; i < actions.Length; i++)
+        for (int i = 0; i < actions.Count; i++)
         {
             actions[i].Process();
             Debug.Log("Processing action: " + i);
